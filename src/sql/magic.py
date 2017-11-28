@@ -119,8 +119,9 @@ class SqlMagic(Magics, Configurable):
 
                 if flags.get('result_var'):
                     result_var = flags['result_var']
-                    print("Returning data to local variable {}"
-                          "".format(result_var))
+                    if self.feedback:
+                        print("Returning data to local variable {}"
+                              "".format(result_var))
                     self.shell.user_ns.update({result_var: result})
                     return None
 
