@@ -33,9 +33,9 @@ class SqlMagic(Magics, Configurable):
     style = Unicode('DEFAULT', config=True, help="Set the table printing style to any of prettytable's defined styles (currently DEFAULT, MSWORD_FRIENDLY, PLAIN_COLUMNS, RANDOM)")
     short_errors = Bool(True, config=True, help="Don't display the full traceback on SQL Programming Error")
     displaylimit = Int(None, config=True, allow_none=True, help="Automatically limit the number of rows displayed (full result set is still stored)")
-    autopandas = Bool(False, config=True, help="Return Pandas DataFrames instead of regular result sets")
+    autopandas = Bool(True, config=True, help="Return Pandas DataFrames instead of regular result sets")
     column_local_vars = Bool(False, config=True, help="Return data into local variables from column names")
-    feedback = Bool(True, config=True, help="Print number of rows affected by DML and connection information")
+    feedback = Bool(False, config=True, help="Print number of rows affected by DML and connection information")
     dsn_filename = Unicode('odbc.ini', config=True, help="Path to DSN file. "
                                                          "When the first argument is of the form [section], "
                                                          "a sqlalchemy connection string is formed from the "
